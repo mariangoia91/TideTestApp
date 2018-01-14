@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		AFE6BD92200BCFE0001AED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */; };
-		AFE6BD94200BCFE0001AED76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BD93200BCFE0001AED76 /* ViewController.swift */; };
-		AFE6BD97200BCFE0001AED76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE6BD95200BCFE0001AED76 /* Main.storyboard */; };
 		AFE6BD9A200BCFE0001AED76 /* TideTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BD98200BCFE0001AED76 /* TideTestApp.xcdatamodeld */; };
 		AFE6BD9C200BCFE0001AED76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */; };
 		AFE6BD9F200BCFE0001AED76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE6BD9D200BCFE0001AED76 /* LaunchScreen.storyboard */; };
+		AFE6BDAD200BD034001AED76 /* TTAMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDAC200BD034001AED76 /* TTAMainTabBarController.swift */; };
+		AFE6BDB2200BD085001AED76 /* TTAListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDB0200BD085001AED76 /* TTAListTableViewController.swift */; };
+		AFE6BDB3200BD085001AED76 /* TTAMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDB1200BD085001AED76 /* TTAMapViewController.swift */; };
+		AFE6BDB6200BD364001AED76 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE6BDB5200BD364001AED76 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AFE6BD8E200BCFE0001AED76 /* TideTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TideTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFE6BD93200BCFE0001AED76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AFE6BD96200BCFE0001AED76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFE6BD99200BCFE0001AED76 /* TideTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TideTestApp.xcdatamodel; sourceTree = "<group>"; };
 		AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE6BD9E200BCFE0001AED76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFE6BDA0200BCFE0001AED76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFE6BDAC200BD034001AED76 /* TTAMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAMainTabBarController.swift; sourceTree = "<group>"; };
+		AFE6BDB0200BD085001AED76 /* TTAListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAListTableViewController.swift; sourceTree = "<group>"; };
+		AFE6BDB1200BD085001AED76 /* TTAMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAMapViewController.swift; sourceTree = "<group>"; };
+		AFE6BDB5200BD364001AED76 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE6BDB6200BD364001AED76 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 			children = (
 				AFE6BD90200BCFE0001AED76 /* TideTestApp */,
 				AFE6BD8F200BCFE0001AED76 /* Products */,
+				AFE6BDB4200BD364001AED76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +62,88 @@
 		AFE6BD90200BCFE0001AED76 /* TideTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6BDA6200BD017001AED76 /* Helpers */,
+				AFE6BDA7200BD017001AED76 /* Managers */,
+				AFE6BDA8200BD017001AED76 /* Models */,
+				AFE6BDA9200BD017001AED76 /* Resources */,
+				AFE6BDAA200BD017001AED76 /* ViewControllers */,
+				AFE6BDAB200BD017001AED76 /* Views */,
 				AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */,
-				AFE6BD93200BCFE0001AED76 /* ViewController.swift */,
-				AFE6BD95200BCFE0001AED76 /* Main.storyboard */,
 				AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */,
 				AFE6BD9D200BCFE0001AED76 /* LaunchScreen.storyboard */,
 				AFE6BDA0200BCFE0001AED76 /* Info.plist */,
 				AFE6BD98200BCFE0001AED76 /* TideTestApp.xcdatamodeld */,
 			);
 			path = TideTestApp;
+			sourceTree = "<group>";
+		};
+		AFE6BDA6200BD017001AED76 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AFE6BDA7200BD017001AED76 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AFE6BDA8200BD017001AED76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AFE6BDA9200BD017001AED76 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AFE6BDAA200BD017001AED76 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFE6BDAF200BD078001AED76 /* Map View */,
+				AFE6BDAE200BD06C001AED76 /* List View */,
+				AFE6BDAC200BD034001AED76 /* TTAMainTabBarController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AFE6BDAB200BD017001AED76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFE6BDAE200BD06C001AED76 /* List View */ = {
+			isa = PBXGroup;
+			children = (
+				AFE6BDB0200BD085001AED76 /* TTAListTableViewController.swift */,
+			);
+			name = "List View";
+			sourceTree = "<group>";
+		};
+		AFE6BDAF200BD078001AED76 /* Map View */ = {
+			isa = PBXGroup;
+			children = (
+				AFE6BDB1200BD085001AED76 /* TTAMapViewController.swift */,
+			);
+			name = "Map View";
+			sourceTree = "<group>";
+		};
+		AFE6BDB4200BD364001AED76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFE6BDB5200BD364001AED76 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +207,6 @@
 			files = (
 				AFE6BD9F200BCFE0001AED76 /* LaunchScreen.storyboard in Resources */,
 				AFE6BD9C200BCFE0001AED76 /* Assets.xcassets in Resources */,
-				AFE6BD97200BCFE0001AED76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,23 +217,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFE6BD94200BCFE0001AED76 /* ViewController.swift in Sources */,
+				AFE6BDB3200BD085001AED76 /* TTAMapViewController.swift in Sources */,
 				AFE6BD9A200BCFE0001AED76 /* TideTestApp.xcdatamodeld in Sources */,
 				AFE6BD92200BCFE0001AED76 /* AppDelegate.swift in Sources */,
+				AFE6BDB2200BD085001AED76 /* TTAListTableViewController.swift in Sources */,
+				AFE6BDAD200BD034001AED76 /* TTAMainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AFE6BD95200BCFE0001AED76 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AFE6BD96200BCFE0001AED76 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AFE6BD9D200BCFE0001AED76 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
