@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AFE6BD92200BCFE0001AED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */; };
+		AFE6BD94200BCFE0001AED76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BD93200BCFE0001AED76 /* ViewController.swift */; };
+		AFE6BD97200BCFE0001AED76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE6BD95200BCFE0001AED76 /* Main.storyboard */; };
+		AFE6BD9A200BCFE0001AED76 /* TideTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BD98200BCFE0001AED76 /* TideTestApp.xcdatamodeld */; };
+		AFE6BD9C200BCFE0001AED76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */; };
+		AFE6BD9F200BCFE0001AED76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE6BD9D200BCFE0001AED76 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AFE6BD8E200BCFE0001AED76 /* TideTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TideTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AFE6BD93200BCFE0001AED76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AFE6BD96200BCFE0001AED76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AFE6BD99200BCFE0001AED76 /* TideTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TideTestApp.xcdatamodel; sourceTree = "<group>"; };
+		AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFE6BD9E200BCFE0001AED76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AFE6BDA0200BCFE0001AED76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFE6BD8B200BCFE0001AED76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AFE6BD85200BCFE0001AED76 = {
+			isa = PBXGroup;
+			children = (
+				AFE6BD90200BCFE0001AED76 /* TideTestApp */,
+				AFE6BD8F200BCFE0001AED76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AFE6BD8F200BCFE0001AED76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFE6BD8E200BCFE0001AED76 /* TideTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFE6BD90200BCFE0001AED76 /* TideTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */,
+				AFE6BD93200BCFE0001AED76 /* ViewController.swift */,
+				AFE6BD95200BCFE0001AED76 /* Main.storyboard */,
+				AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */,
+				AFE6BD9D200BCFE0001AED76 /* LaunchScreen.storyboard */,
+				AFE6BDA0200BCFE0001AED76 /* Info.plist */,
+				AFE6BD98200BCFE0001AED76 /* TideTestApp.xcdatamodeld */,
+			);
+			path = TideTestApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFE6BD8D200BCFE0001AED76 /* TideTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFE6BDA3200BCFE0001AED76 /* Build configuration list for PBXNativeTarget "TideTestApp" */;
+			buildPhases = (
+				AFE6BD8A200BCFE0001AED76 /* Sources */,
+				AFE6BD8B200BCFE0001AED76 /* Frameworks */,
+				AFE6BD8C200BCFE0001AED76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TideTestApp;
+			productName = TideTestApp;
+			productReference = AFE6BD8E200BCFE0001AED76 /* TideTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFE6BD86200BCFE0001AED76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Marian Goia";
+				TargetAttributes = {
+					AFE6BD8D200BCFE0001AED76 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AFE6BD89200BCFE0001AED76 /* Build configuration list for PBXProject "TideTestApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AFE6BD85200BCFE0001AED76;
+			productRefGroup = AFE6BD8F200BCFE0001AED76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFE6BD8D200BCFE0001AED76 /* TideTestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFE6BD8C200BCFE0001AED76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFE6BD9F200BCFE0001AED76 /* LaunchScreen.storyboard in Resources */,
+				AFE6BD9C200BCFE0001AED76 /* Assets.xcassets in Resources */,
+				AFE6BD97200BCFE0001AED76 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFE6BD8A200BCFE0001AED76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFE6BD94200BCFE0001AED76 /* ViewController.swift in Sources */,
+				AFE6BD9A200BCFE0001AED76 /* TideTestApp.xcdatamodeld in Sources */,
+				AFE6BD92200BCFE0001AED76 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AFE6BD95200BCFE0001AED76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFE6BD96200BCFE0001AED76 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AFE6BD9D200BCFE0001AED76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFE6BD9E200BCFE0001AED76 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AFE6BDA1200BCFE0001AED76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AFE6BDA2200BCFE0001AED76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AFE6BDA4200BCFE0001AED76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TideTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MGT.TideTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AFE6BDA5200BCFE0001AED76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TideTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MGT.TideTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFE6BD89200BCFE0001AED76 /* Build configuration list for PBXProject "TideTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFE6BDA1200BCFE0001AED76 /* Debug */,
+				AFE6BDA2200BCFE0001AED76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFE6BDA3200BCFE0001AED76 /* Build configuration list for PBXNativeTarget "TideTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFE6BDA4200BCFE0001AED76 /* Debug */,
+				AFE6BDA5200BCFE0001AED76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AFE6BD98200BCFE0001AED76 /* TideTestApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AFE6BD99200BCFE0001AED76 /* TideTestApp.xcdatamodel */,
+			);
+			currentVersion = AFE6BD99200BCFE0001AED76 /* TideTestApp.xcdatamodel */;
+			path = TideTestApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AFE6BD86200BCFE0001AED76 /* Project object */;
+}
