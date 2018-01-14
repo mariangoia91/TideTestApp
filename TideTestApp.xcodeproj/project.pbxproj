@@ -15,6 +15,8 @@
 		AFE6BDB2200BD085001AED76 /* TTAListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDB0200BD085001AED76 /* TTAListTableViewController.swift */; };
 		AFE6BDB3200BD085001AED76 /* TTAMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDB1200BD085001AED76 /* TTAMapViewController.swift */; };
 		AFE6BDB6200BD364001AED76 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE6BDB5200BD364001AED76 /* MapKit.framework */; };
+		AFE6BDB8200BDB82001AED76 /* TTALocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDB7200BDB82001AED76 /* TTALocationManager.swift */; };
+		AFE6BDBA200BDC39001AED76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE6BDB9200BDC39001AED76 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		AFE6BDB0200BD085001AED76 /* TTAListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAListTableViewController.swift; sourceTree = "<group>"; };
 		AFE6BDB1200BD085001AED76 /* TTAMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAMapViewController.swift; sourceTree = "<group>"; };
 		AFE6BDB5200BD364001AED76 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AFE6BDB7200BDB82001AED76 /* TTALocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTALocationManager.swift; sourceTree = "<group>"; };
+		AFE6BDB9200BDC39001AED76 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE6BDBA200BDC39001AED76 /* CoreLocation.framework in Frameworks */,
 				AFE6BDB6200BD364001AED76 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +92,7 @@
 		AFE6BDA7200BD017001AED76 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6BDB7200BDB82001AED76 /* TTALocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 		AFE6BDB4200BD364001AED76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6BDB9200BDC39001AED76 /* CoreLocation.framework */,
 				AFE6BDB5200BD364001AED76 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -178,6 +185,7 @@
 				TargetAttributes = {
 					AFE6BD8D200BCFE0001AED76 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = D6QNR96P63;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -217,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE6BDB8200BDB82001AED76 /* TTALocationManager.swift in Sources */,
 				AFE6BDB3200BD085001AED76 /* TTAMapViewController.swift in Sources */,
 				AFE6BD9A200BCFE0001AED76 /* TideTestApp.xcdatamodeld in Sources */,
 				AFE6BD92200BCFE0001AED76 /* AppDelegate.swift in Sources */,
@@ -336,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D6QNR96P63;
 				INFOPLIST_FILE = TideTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MGT.TideTestApp;
@@ -348,6 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D6QNR96P63;
 				INFOPLIST_FILE = TideTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MGT.TideTestApp;

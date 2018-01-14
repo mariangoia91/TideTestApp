@@ -10,10 +10,21 @@ import UIKit
 
 class TTAListTableViewController: UITableViewController {
 
+    var locationManager = TTALocationManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        locationManager.stopUpdatingLocation()
     }
 }
 
@@ -35,10 +46,33 @@ extension TTAListTableViewController {
     }
 }
 
-// MARK: - TAble view delegate
+// MARK: - Table view delegate
 
 extension TTAListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Add action for cell selection here
+    }
+}
+
+// MARK: - Location Manager Delegate
+
+extension TTAListTableViewController: TTALocationManagerDelegate {
+    func locationFound(_ latitude: Double, longitude: Double) {
+        print("found location")
+    }
+    
+    func locationFoundGetAsString(_ latitude: NSString, longitude: NSString) {
+        print("lat: \(latitude) long:\(longitude)")
+    }
+    
+    func locationManagerStatus(_ status:NSString) {
+        
+        print(status)
+    }
+    
+    func locationManagerReceivedError(_ error:NSString) {
+        
+        print(error)
+        //        activityIndicator.stopAnimating()
     }
 }

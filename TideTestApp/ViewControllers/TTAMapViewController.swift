@@ -13,10 +13,21 @@ class TTAMapViewController: UIViewController {
 
     var mapView = MKMapView()
     
+    var locationManager = TTALocationManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupMapView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        locationManager.stopUpdatingLocation()
     }
 }
 
@@ -25,6 +36,8 @@ class TTAMapViewController: UIViewController {
 extension TTAMapViewController {
     func setupMapView() {
         mapView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        
+        mapView.showsUserLocation = true
         
         self.view.addSubview(mapView)
         self.addMapViewAutolayoutConstraints()
@@ -39,5 +52,28 @@ extension TTAMapViewController {
         let mapViewBottomConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.bottomLayoutGuide, attribute:NSLayoutAttribute.bottom, multiplier: 1, constant: 0);
         
         self.view.addConstraints([mapViewLeadingConstraint, mapViewTrailingConstraint, mapViewTopConstraint, mapViewBottomConstraint])
+    }
+}
+
+// MARK: - Location Manager Delegate
+
+extension TTAMapViewController: TTALocationManagerDelegate {
+    func locationFound(_ latitude: Double, longitude: Double) {
+        print("found location")
+    }
+    
+    func locationFoundGetAsString(_ latitude: NSString, longitude: NSString) {
+        print("lat: \(latitude) long:\(longitude)")
+    }
+    
+    func locationManagerStatus(_ status:NSString) {
+        
+        print(status)
+    }
+    
+    func locationManagerReceivedError(_ error:NSString) {
+        
+        print(error)
+//        activityIndicator.stopAnimating()
     }
 }

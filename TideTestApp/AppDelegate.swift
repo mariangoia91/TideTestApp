@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window!.makeKeyAndVisible()
         
+        TTALocationManager.sharedInstance.startUpdatingLocation()
+        
         return true
     }
 
