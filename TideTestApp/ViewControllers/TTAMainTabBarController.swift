@@ -19,21 +19,21 @@ class TTAMainTabBarController: UITabBarController {
         setupTabBar()
     }
     
-    func setupTabBar() {
+    fileprivate func setupTabBar() {
         initListViewController()
         initMapViewController()
 
         self.viewControllers = [listViewNavigationController, mapViewNavigationController]
     }
     
-    func initListViewController() {
+    fileprivate func initListViewController() {
         listViewNavigationController.title = "List"
         
         let listViewController = TTAListTableViewController(nibName: nil, bundle: nil)
         listViewNavigationController.viewControllers = [listViewController]
     }
     
-    func initMapViewController() {
+    fileprivate func initMapViewController() {
         mapViewNavigationController.title = "Map"
         
         let mapViewController = TTAMapViewController(nibName: nil, bundle: nil)

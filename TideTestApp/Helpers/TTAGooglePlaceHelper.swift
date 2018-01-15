@@ -29,7 +29,7 @@ class TTAGooglePlaceHelper {
                     // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
                     
-                    if let jsonResults = jsonSerialized?["results"] as? [Any] {
+                    if let jsonResults = jsonSerialized?["results"] as? [Any] { // Keys are hardcoded to save time, as usage of the GooglePlaces API was advised against in the requirement
 
                         for item in jsonResults {
                             

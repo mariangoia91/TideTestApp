@@ -15,6 +15,8 @@ class TTAMapViewController: UIViewController {
     
     var locationManager = TTALocationManager.sharedInstance
     
+    // MARK: - View lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +26,8 @@ class TTAMapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+        
+        self.displayNavBarActivity()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -34,17 +38,16 @@ class TTAMapViewController: UIViewController {
 // MARK: - Helpers
 
 extension TTAMapViewController {
-    func setupMapView() {
+    fileprivate func setupMapView() {
         mapView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         
         mapView.showsUserLocation = true
-        mapView.delegate = self
         
         self.view.addSubview(mapView)
         self.addMapViewAutolayoutConstraints()
     }
     
-    func addMapViewAutolayoutConstraints() {
+    fileprivate func addMapViewAutolayoutConstraints() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         
         let mapViewLeadingConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
@@ -55,7 +58,9 @@ extension TTAMapViewController {
         self.view.addConstraints([mapViewLeadingConstraint, mapViewTrailingConstraint, mapViewTopConstraint, mapViewBottomConstraint])
     }
     
-    func createAnnotations(places: [Place]) {
+    fileprivate func createAnnotations(places: [Place]) {   // Creates map pins
+        clearAnnotations() // cleanup to avoid overlapping
+        
         for place in places {
             let CLLCoordType = CLLocationCoordinate2D(latitude: place.lat, longitude: place.long);
             let anno = MKPointAnnotation();
@@ -65,27 +70,33 @@ extension TTAMapViewController {
             mapView.addAnnotation(anno);
         }
     }
+    
+    fileprivate func clearAnnotations() {   // Cleans all annotations off the map
+        for annotation in self.mapView.annotations {
+            self.mapView.removeAnnotation(annotation)
+        }
+    }
 }
 
 // MARK: - Location Manager Delegate
 
 extension TTAMapViewController: TTALocationManagerDelegate {
     func locationFound(_ latitude: Double, longitude: Double) {
-        print("found location")
-        
-        locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation() // We stop listening for the location as the requirement does not ask for CONTINUOUS retrieval of places in close proximity to the user
         
         TTAGooglePlaceHelper.googlePlacesForLocation(lat: latitude, long: longitude) { (places) in
-            self.createAnnotations(places: places)
+
+            DispatchQueue.main.async {
+                // Create the pins
+                self.createAnnotations(places: places)
+                
+                //            // Center the map, animated
+                let mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2DMake(latitude, longitude), span: MKCoordinateSpanMake(0.1, 0.1))
+                self.mapView.setRegion(mapRegion, animated: true)
+                
+                // Dismiss the activity indicator
+                self.dismissNavBarActivity()
+            }
         }
-    }
-}
-
-// MARK: - MKMapViewDelegate
-
-extension TTAMapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let mapRegion = MKCoordinateRegion(center: userLocation.coordinate, span: MKCoordinateSpanMake(0.1, 0.1))
-        mapView.setRegion(mapRegion, animated: true)
     }
 }

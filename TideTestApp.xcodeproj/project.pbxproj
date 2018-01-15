@@ -19,6 +19,7 @@
 		AFE6BDBA200BDC39001AED76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE6BDB9200BDC39001AED76 /* CoreLocation.framework */; };
 		AFE6BDBC200C368C001AED76 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDBB200C368C001AED76 /* Place.swift */; };
 		AFE6BDBE200C4374001AED76 /* TTAGooglePlaceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDBD200C4374001AED76 /* TTAGooglePlaceHelper.swift */; };
+		AFE6BDC0200CE415001AED76 /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDBF200CE415001AED76 /* UIViewController+ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		AFE6BDB9200BDC39001AED76 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AFE6BDBB200C368C001AED76 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		AFE6BDBD200C4374001AED76 /* TTAGooglePlaceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAGooglePlaceHelper.swift; sourceTree = "<group>"; };
+		AFE6BDBF200CE415001AED76 /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,6 @@
 				AFE6BDA8200BD017001AED76 /* Models */,
 				AFE6BDA9200BD017001AED76 /* Resources */,
 				AFE6BDAA200BD017001AED76 /* ViewControllers */,
-				AFE6BDAB200BD017001AED76 /* Views */,
 				AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */,
 				AFE6BDA0200BCFE0001AED76 /* Info.plist */,
 				AFE6BD98200BCFE0001AED76 /* TideTestApp.xcdatamodeld */,
@@ -88,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				AFE6BDBD200C4374001AED76 /* TTAGooglePlaceHelper.swift */,
+				AFE6BDBF200CE415001AED76 /* UIViewController+ActivityIndicator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -120,34 +122,27 @@
 		AFE6BDAA200BD017001AED76 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AFE6BDAF200BD078001AED76 /* Map View */,
-				AFE6BDAE200BD06C001AED76 /* List View */,
+				AFE6BDAF200BD078001AED76 /* Map */,
+				AFE6BDAE200BD06C001AED76 /* List */,
 				AFE6BDAC200BD034001AED76 /* TTAMainTabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		AFE6BDAB200BD017001AED76 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		AFE6BDAE200BD06C001AED76 /* List View */ = {
+		AFE6BDAE200BD06C001AED76 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				AFE6BDB0200BD085001AED76 /* TTAListTableViewController.swift */,
 			);
-			name = "List View";
+			name = List;
 			sourceTree = "<group>";
 		};
-		AFE6BDAF200BD078001AED76 /* Map View */ = {
+		AFE6BDAF200BD078001AED76 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				AFE6BDB1200BD085001AED76 /* TTAMapViewController.swift */,
 			);
-			name = "Map View";
+			name = Map;
 			sourceTree = "<group>";
 		};
 		AFE6BDB4200BD364001AED76 /* Frameworks */ = {
@@ -234,6 +229,7 @@
 				AFE6BDBE200C4374001AED76 /* TTAGooglePlaceHelper.swift in Sources */,
 				AFE6BDB8200BDB82001AED76 /* TTALocationManager.swift in Sources */,
 				AFE6BDB3200BD085001AED76 /* TTAMapViewController.swift in Sources */,
+				AFE6BDC0200CE415001AED76 /* UIViewController+ActivityIndicator.swift in Sources */,
 				AFE6BD9A200BCFE0001AED76 /* TideTestApp.xcdatamodeld in Sources */,
 				AFE6BD92200BCFE0001AED76 /* AppDelegate.swift in Sources */,
 				AFE6BDB2200BD085001AED76 /* TTAListTableViewController.swift in Sources */,

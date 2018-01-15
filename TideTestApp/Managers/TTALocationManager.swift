@@ -18,9 +18,6 @@ class TTALocationManager: NSObject,CLLocationManagerDelegate {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     
-    var latitudeAsString: String = ""
-    var longitudeAsString: String = ""
-    
     var lastKnownLatitude: Double = 0.0
     var lastKnownLongitude: Double = 0.0
     
@@ -51,22 +48,7 @@ class TTALocationManager: NSObject,CLLocationManagerDelegate {
         return Static.instance
     }
     
-    func initLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        locationManager.requestWhenInUseAuthorization()
-        
-        locationManager.startUpdatingLocation()
-    }
-    
-    func startUpdatingLocationWithCompletionHandler(_ completionHandler:((_ latitude:Double, _ longitude:Double, _ status:String, _ verboseMessage:String, _ error:String?)->())? = nil){
-        
-        self.completionHandler = completionHandler
-        
-        initLocationManager()
-    }
+    // MARK: - Public
     
     func startUpdatingLocation() {
         initLocationManager()
@@ -78,6 +60,20 @@ class TTALocationManager: NSObject,CLLocationManagerDelegate {
 
         locationManager.stopUpdatingLocation()
     }
+
+    // MARK: - Private
+    
+    fileprivate func initLocationManager() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        locationManager.startUpdatingLocation()
+    }
+    
+    // MARK: - CLLocationManager Delegate
     
     internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         var hasAuthorised = false
@@ -133,10 +129,7 @@ class TTALocationManager: NSObject,CLLocationManagerDelegate {
             lastKnownLatitude = latitude
             lastKnownLongitude = longitude
         }
-        
-        latitudeAsString = latitude.description
-        longitudeAsString = longitude.description
-        
+
         var verbose = ""
         
         verbose = verboseMessage
@@ -149,9 +142,6 @@ class TTALocationManager: NSObject,CLLocationManagerDelegate {
         if (delegate != nil){
             
             if (latitude != lastKnownLatitude && longitude != lastKnownLongitude) {
-                if((delegate?.responds(to: #selector(TTALocationManagerDelegate.locationFoundGetAsString(_:longitude:))))!){
-                    delegate?.locationFoundGetAsString!(latitudeAsString as NSString,longitude:longitudeAsString as NSString)
-                }
                 if((delegate?.responds(to: #selector(TTALocationManagerDelegate.locationFound(_:longitude:))))!){
                     delegate?.locationFound(latitude,longitude:longitude)
                 }
@@ -163,7 +153,6 @@ class TTALocationManager: NSObject,CLLocationManagerDelegate {
 @objc protocol TTALocationManagerDelegate : NSObjectProtocol
 {
     func locationFound(_ latitude:Double, longitude:Double)
-    @objc optional func locationFoundGetAsString(_ latitude:NSString, longitude:NSString)
     @objc optional func locationManagerStatus(_ status:NSString)
     @objc optional func locationManagerReceivedError(_ error:NSString)
     @objc optional func locationManagerVerboseMessage(_ message:NSString)

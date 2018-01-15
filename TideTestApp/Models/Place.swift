@@ -28,6 +28,6 @@ class Place: NSObject {
     }
     
     convenience override init() {
-        self.init() // calls above mentioned controller with default name
+        self.init()
     }
 }

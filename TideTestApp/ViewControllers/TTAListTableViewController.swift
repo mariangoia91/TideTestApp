@@ -13,6 +13,8 @@ class TTAListTableViewController: UITableViewController {
     var locationManager = TTALocationManager.sharedInstance
     var results: [Place] = []
     
+    // MARK: - View lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,8 @@ class TTAListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+        
+        self.displayNavBarActivity()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,7 +56,7 @@ extension TTAListTableViewController {
 // MARK: - Table view delegate
 
 extension TTAListTableViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let place = results[indexPath.row]
         
         openGoogleMaps(withLocation: place.lat, long: place.long)
@@ -78,12 +82,17 @@ extension TTAListTableViewController {
 
 extension TTAListTableViewController: TTALocationManagerDelegate {
     func locationFound(_ latitude: Double, longitude: Double) {
-
-        locationManager.stopUpdatingLocation()
+        
+        locationManager.stopUpdatingLocation() // We stop listening for the location as the requirement does not ask for CONTINUOUS retrieval of places in close proximity to the user
+        
         
         TTAGooglePlaceHelper.googlePlacesForLocation(lat: latitude, long: longitude) { (places) in
-            self.results = places
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.results = places
+                self.tableView.reloadData()
+                
+                self.dismissNavBarActivity()
+            }
         }
     }
 }
