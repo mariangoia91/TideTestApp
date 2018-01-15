@@ -9,17 +9,18 @@
 import Foundation
 import CoreLocation
 
+struct GooglePlacesConstants {
+    static let apiKey = "AIzaSyDW6mySVrKjvCnRZyXnv78bQ7lcuxqfqQA";
+}
+
 class TTAGooglePlaceHelper {
     static func googlePlacesForLocation(lat: Double, long: Double, completion: @escaping (_ places: [Place]) -> Void) {
         var resultsArray: [Place] = []
-        
-        
-        let apiKey = "AIzaSyDW6mySVrKjvCnRZyXnv78bQ7lcuxqfqQA"
-        
+
         let placeType = "bar"
         let radius = 500
         
-        let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(long)&radius=\(radius)&type=\(placeType)&key=\(apiKey)")
+        let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(long)&radius=\(radius)&type=\(placeType)&key=\(GooglePlacesConstants.apiKey)")
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             

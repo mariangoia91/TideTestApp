@@ -60,6 +60,8 @@ extension TTAMapViewController {
             let CLLCoordType = CLLocationCoordinate2D(latitude: place.lat, longitude: place.long);
             let anno = MKPointAnnotation();
             anno.coordinate = CLLCoordType;
+            anno.title = place.name
+            anno.subtitle = "\(String(format: "%.f", arguments: [place.distanceFromUser]))m"
             mapView.addAnnotation(anno);
         }
     }
