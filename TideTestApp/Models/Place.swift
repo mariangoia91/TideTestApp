@@ -11,13 +11,19 @@ import UIKit
 class Place: NSObject {
 
     var name: String
-    var lat, long: Double
+    var lat, long, userLat, userLong, distanceFromUser: Double
     
-    init(name: String, lat: Double, long: Double) {
+    init(name: String, lat: Double, long: Double, userLat: Double, userLong: Double) {
         self.name = name
+
         self.lat = lat
         self.long = long
+        
+        self.userLat = userLat
+        self.userLong = userLong
 
+        distanceFromUser = TTAGooglePlaceHelper.distanceBetweenLocations(fromLat: userLat, fromLong: userLong, toLat: lat, toLong: long)
+        
         super.init()
     }
     

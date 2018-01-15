@@ -25,7 +25,7 @@
 		AFE6BD8E200BCFE0001AED76 /* TideTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TideTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFE6BD99200BCFE0001AED76 /* TideTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TideTestApp.xcdatamodel; sourceTree = "<group>"; };
-		AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		AFE6BD9E200BCFE0001AED76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFE6BDA0200BCFE0001AED76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE6BDAC200BD034001AED76 /* TTAMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAMainTabBarController.swift; sourceTree = "<group>"; };
@@ -78,8 +78,6 @@
 				AFE6BDAA200BD017001AED76 /* ViewControllers */,
 				AFE6BDAB200BD017001AED76 /* Views */,
 				AFE6BD91200BCFE0001AED76 /* AppDelegate.swift */,
-				AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */,
-				AFE6BD9D200BCFE0001AED76 /* LaunchScreen.storyboard */,
 				AFE6BDA0200BCFE0001AED76 /* Info.plist */,
 				AFE6BD98200BCFE0001AED76 /* TideTestApp.xcdatamodeld */,
 			);
@@ -113,6 +111,8 @@
 		AFE6BDA9200BD017001AED76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6BD9B200BCFE0001AED76 /* Assets.xcassets */,
+				AFE6BD9D200BCFE0001AED76 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -251,6 +251,7 @@
 				AFE6BD9E200BCFE0001AED76 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -394,6 +395,7 @@
 				AFE6BDA5200BCFE0001AED76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

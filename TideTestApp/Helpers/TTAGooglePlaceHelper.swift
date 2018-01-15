@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class TTAGooglePlaceHelper {
     static func googlePlacesForLocation(lat: Double, long: Double, completion: @escaping (_ places: [Place]) -> Void) {
@@ -39,7 +40,7 @@ class TTAGooglePlaceHelper {
                                         if let location = geometry["location"] as? [String : Any] {
                                             
                                             if let resultLat = location["lat"] as? Double, let resultLong = location["lng"] as? Double {
-                                                let place = Place(name: name, lat: resultLat, long: resultLong)
+                                                let place = Place(name: name, lat: resultLat, long: resultLong, userLat: lat, userLong: long)
                                                 
                                                 resultsArray.append(place)
                                             }
@@ -62,5 +63,12 @@ class TTAGooglePlaceHelper {
         }
         
         task.resume()
+    }
+    
+    static func distanceBetweenLocations(fromLat: Double, fromLong: Double, toLat: Double, toLong: Double) -> Double {
+        let fromCoordinate = CLLocation(latitude: fromLat, longitude: fromLong)
+        let toCoordinate = CLLocation(latitude: toLat, longitude: toLong)
+        
+        return fromCoordinate.distance(from: toCoordinate) // result is in meters
     }
 }

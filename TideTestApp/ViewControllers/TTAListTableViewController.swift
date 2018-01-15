@@ -43,7 +43,7 @@ extension TTAListTableViewController {
         
         let place = results[indexPath.row]
         
-        cell.textLabel?.text = place.name
+        cell.textLabel?.text = "\(place.name), \(String(format: "%.f", arguments: [place.distanceFromUser]))m"
         
         return cell
     }
@@ -85,16 +85,5 @@ extension TTAListTableViewController: TTALocationManagerDelegate {
             self.results = places
             self.tableView.reloadData()
         }
-    }
-    
-    func locationManagerStatus(_ status:NSString) {
-        
-        print(status)
-    }
-    
-    func locationManagerReceivedError(_ error:NSString) {
-        
-        print(error)
-        //        activityIndicator.stopAnimating()
     }
 }
