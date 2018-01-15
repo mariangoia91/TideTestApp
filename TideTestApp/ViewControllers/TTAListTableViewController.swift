@@ -9,12 +9,13 @@
 import UIKit
 
 class TTAListTableViewController: UITableViewController {
-
+    
     var locationManager = TTALocationManager.sharedInstance
+    var results: [Place] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
     }
     
@@ -34,13 +35,15 @@ extension TTAListTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return results.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = "x"
+        let place = results[indexPath.row]
+        
+        cell.textLabel?.text = place.name
         
         return cell
     }
@@ -49,8 +52,25 @@ extension TTAListTableViewController {
 // MARK: - Table view delegate
 
 extension TTAListTableViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Add action for cell selection here
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+        let place = results[indexPath.row]
+        
+        openGoogleMaps(withLocation: place.lat, long: place.long)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - Helpers
+
+extension TTAListTableViewController {
+    func openGoogleMaps(withLocation lat: Double, long: Double) {
+        if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
+            UIApplication.shared.open(URL(string: "comgooglemaps://?center=\(lat),\(long)&zoom=14&views=traffic")!, options: [:], completionHandler: nil)
+        } else {
+            print("Can't use comgooglemaps://")
+            UIApplication.shared.open(URL(string: "http://maps.google.com/maps?q=loc:\(lat),\(long)&zoom=14&views=traffic")!, options: [:], completionHandler: nil)
+        }
     }
 }
 
@@ -58,38 +78,13 @@ extension TTAListTableViewController {
 
 extension TTAListTableViewController: TTALocationManagerDelegate {
     func locationFound(_ latitude: Double, longitude: Double) {
-        print("found location")
-    }
-    
-    func locationFoundGetAsString(_ latitude: NSString, longitude: NSString) {
-        print("lat: \(latitude) long:\(longitude)")
-        
-        
+
         locationManager.stopUpdatingLocation()
         
-        let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(latitude),\(longitude)&radius=500&type=bar&key=AIzaSyDW6mySVrKjvCnRZyXnv78bQ7lcuxqfqQA")
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            
-            if let data = data {
-                do {
-                    // Convert the data to JSON
-                    let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    
-                    if let json = jsonSerialized, let url = json["url"], let explanation = json["explanation"] {
-                        print(url)
-                        print(explanation)
-                    }
-                }  catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
+        TTAGooglePlaceHelper.googlePlacesForLocation(lat: latitude, long: longitude) { (places) in
+            self.results = places
+            self.tableView.reloadData()
         }
-        
-        task.resume()
-
     }
     
     func locationManagerStatus(_ status:NSString) {

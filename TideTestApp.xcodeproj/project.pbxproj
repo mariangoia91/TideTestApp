@@ -17,6 +17,8 @@
 		AFE6BDB6200BD364001AED76 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE6BDB5200BD364001AED76 /* MapKit.framework */; };
 		AFE6BDB8200BDB82001AED76 /* TTALocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDB7200BDB82001AED76 /* TTALocationManager.swift */; };
 		AFE6BDBA200BDC39001AED76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE6BDB9200BDC39001AED76 /* CoreLocation.framework */; };
+		AFE6BDBC200C368C001AED76 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDBB200C368C001AED76 /* Place.swift */; };
+		AFE6BDBE200C4374001AED76 /* TTAGooglePlaceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6BDBD200C4374001AED76 /* TTAGooglePlaceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		AFE6BDB5200BD364001AED76 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AFE6BDB7200BDB82001AED76 /* TTALocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTALocationManager.swift; sourceTree = "<group>"; };
 		AFE6BDB9200BDC39001AED76 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AFE6BDBB200C368C001AED76 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		AFE6BDBD200C4374001AED76 /* TTAGooglePlaceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAGooglePlaceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		AFE6BDA6200BD017001AED76 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6BDBD200C4374001AED76 /* TTAGooglePlaceHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 		AFE6BDA8200BD017001AED76 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6BDBB200C368C001AED76 /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,11 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE6BDBE200C4374001AED76 /* TTAGooglePlaceHelper.swift in Sources */,
 				AFE6BDB8200BDB82001AED76 /* TTALocationManager.swift in Sources */,
 				AFE6BDB3200BD085001AED76 /* TTAMapViewController.swift in Sources */,
 				AFE6BD9A200BCFE0001AED76 /* TideTestApp.xcdatamodeld in Sources */,
 				AFE6BD92200BCFE0001AED76 /* AppDelegate.swift in Sources */,
 				AFE6BDB2200BD085001AED76 /* TTAListTableViewController.swift in Sources */,
+				AFE6BDBC200C368C001AED76 /* Place.swift in Sources */,
 				AFE6BDAD200BD034001AED76 /* TTAMainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
