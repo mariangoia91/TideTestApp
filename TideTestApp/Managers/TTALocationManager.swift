@@ -100,12 +100,6 @@ class TTALocationManager: NSObject,CLLocationManagerDelegate {
                 var verbose = ""
                 verbose = verboseMessage
                 
-                if ((delegate != nil) && (delegate?.responds(to: #selector(TTALocationManagerDelegate.locationManagerVerboseMessage(_:))))!) {
-                    
-                    delegate?.locationManagerVerboseMessage!(verbose as NSString)
-                    
-                }
-                
                 if(completionHandler != nil) {
                     completionHandler?(latitude, longitude, locationStatus as String, verbose,nil)
                 }
@@ -154,6 +148,4 @@ class TTALocationManager: NSObject,CLLocationManagerDelegate {
 {
     func locationFound(_ latitude:Double, longitude:Double)
     @objc optional func locationManagerStatus(_ status:NSString)
-    @objc optional func locationManagerReceivedError(_ error:NSString)
-    @objc optional func locationManagerVerboseMessage(_ message:NSString)
 }

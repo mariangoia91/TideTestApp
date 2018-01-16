@@ -95,4 +95,13 @@ extension TTAListTableViewController: TTALocationManagerDelegate {
             }
         }
     }
+    
+    func locationManagerStatus(_ status: NSString) {
+        if status == "Denied access" || status == "Restricted Access" {
+            let alert = UIAlertController(title: "Error", message: "There was an error getting your location. Please turn on location services and allow the TideTestApp in the location permissions screen", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
